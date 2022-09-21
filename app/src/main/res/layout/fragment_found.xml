@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background2"
+    tools:context="com.example.commercialdirector.myitschool.fragments.FoundFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+    <EditText
+        android:id="@+id/foundinput"
+        android:layout_width="235dp"
+        android:layout_height="56dp"
+        android:hint="@string/hint_input_to_found"
+        android:background="#181C3B"
+        android:textColorHint="#7484B4"
+        android:textColor="#7484B4"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="8dp"/>
+
+        <Button
+            android:id="@+id/foundbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="@string/btn_found"
+            android:textColor="#477FB4"
+            android:background="#070820"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvfound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" />
+
+
+</LinearLayout>

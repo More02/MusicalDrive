@@ -1,0 +1,149 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background2"
+    tools:context="com.example.commercialdirector.myitschool.fragments.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#7484B4"-->
+            <!--android:text="Логин пользователя"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:layout_marginTop="20dp"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:textColor="#477FB4"
+            android:layout_marginTop="17dp"
+            android:text="Мой логин:"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:id="@+id/userMainId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#7484B4"
+            android:layout_marginTop="17dp"
+            android:textSize="17dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/userPhotoimageView"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/user" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btnUserPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:background="#070820"
+                android:text="Загрузить аватар"
+                android:textAllCaps="false"
+                android:textColor="#477FB4"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/makephoto"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#070820"
+                android:text="Сделать фото"
+                android:textAllCaps="false"
+                android:textColor="#477FB4"
+                android:textStyle="bold"/>
+            <Button
+                android:id="@+id/btnCustoms"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#070820"
+                android:text="Редактировать профиль"
+                android:textAllCaps="false"
+                android:textColor="#477FB4"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_music"
+            android:layout_marginLeft="20dp"
+            android:textColor="#7484B4"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/AddMusic"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/plusnew"
+            app:backgroundTint="#A8ABFC"
+            android:layout_gravity="bottom|right"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#5971FC"
+        android:text="@string/my_music"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_alignTop="@+id/btnCustoms"
+        android:layout_alignParentStart="true" />
+
+</LinearLayout>

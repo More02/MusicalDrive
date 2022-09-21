@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        card_view:cardBackgroundColor="@color/bg"
+        card_view:cardCornerRadius="10dp"
+        card_view:contentPadding="10dp">
+
+        <LinearLayout
+            android:id="@+id/musicview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/playbt"
+                android:layout_width="28dp"
+                android:layout_height="31dp"
+                android:src="@drawable/playnormal"
+                android:layout_marginTop="5dp"/>
+
+            <ImageButton
+                android:id="@+id/pausebt"
+                android:layout_width="28dp"
+                android:layout_height="32dp"
+                android:src="@drawable/pausenormal"
+                android:layout_marginTop="5dp"/>
+
+            <ImageButton
+                android:id="@+id/stopbt"
+                android:layout_width="28dp"
+                android:layout_height="32dp"
+                android:src="@drawable/stopnormal"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_recycler_item"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textColor="#4E54B4"
+                android:layout_marginLeft="3dp"/>
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/likebt"-->
+                <!--android:layout_width="27dp"-->
+                <!--android:layout_height="32dp"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_marginLeft="-22dp"-->
+                <!--android:src="@drawable/like"/>-->
+
+
+
+
+
+            <CheckBox
+                    android:id="@+id/likebt"
+                    android:layout_width="27dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="10dp"
+                    android:button="@drawable/checkbox_selector"
+                    android:layout_marginLeft="-31dp"
+                    android:layout_gravity="right"/>
+            <TextView
+                android:id="@+id/numberlikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="#A9ABFE"
+                android:layout_marginLeft="-4dp"
+                android:layout_gravity="right"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

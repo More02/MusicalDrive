@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MusicalDrive</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_name">Логин</string>
+    <string name="btn_login">Войти</string>
+    <string name="btn_register">Регистрация</string>
+    <string name="btn_link_to_register">Создать новую учетную запись</string>
+    <string name="btn_link_to_login">Войти</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="btn_logout">Выйти</string>
+    <string name="name">Имя</string>
+    <string name="title_activity_home">MusicalDrive</string>
+    <string name="title_home">Профиль</string>
+    <string name="title_new">Обновления</string>
+    <string name="title_found">Поиск</string>
+    <string name="title_news">Новости</string>
+    <string name="hint_input_to_found">Поиск по логину</string>
+    <string name="btn_found">Найти</string>
+
+    <string name="add_music"><font size="15"><b>Добавить аудиозапись</b></font></string>
+    <string name="my_music"><font size="17"><b>Мои аудиозаписи:</b></font></string>
+    <string name="my_music_user"><font size="17"><b>Список аудиозаписей:</b></font></string>
+    <string name="my_new"><font size="17"><b>Список моих подписчиков:</b></font></string>
+    <string name="my_podpiski"><font size="17"><b>Список моих подписок:</b></font></string>
+    <string name="my_name"><font size="17"><b>Логин пользователя:</b></font></string>
+    <string name="user_music"><font size="17"><b>Список аудиозаписей:</b></font></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_user">UserActivity</string>
+</resources>

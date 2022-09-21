@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background2"
+    tools:context="com.example.commercialdirector.myitschool.fragments.NewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="horizontal">
+
+       <!--<ImageButton-->
+           <!--android:id="@+id/btnpodpichiki"-->
+           <!--android:layout_width="135dp"-->
+           <!--android:layout_height="30dp" />-->
+
+       <!--<Button-->
+           <!--android:id="@+id/btnpodpiski"-->
+           <!--android:layout_width="135dp"-->
+           <!--android:layout_height="30dp"-->
+           <!--android:text="Мои подписки"-->
+           <!--android:background="#070820"-->
+           <!--android:textAllCaps="false"-->
+           <!--android:textColor="#477FB4"-->
+           <!--android:textStyle="bold"-->
+           <!--android:layout_marginBottom="10dp"/>-->
+
+
+
+   </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/my_new"
+        android:textColor="#5971FC"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvnew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginTop="55dp"
+        />
+
+</FrameLayout>
