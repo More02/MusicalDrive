@@ -19,6 +19,7 @@ import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
 import com.example.commercialdirector.myitschool.models.User;
 import com.example.commercialdirector.myitschool.models.Users;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
@@ -30,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class FoundFragment extends Fragment {
-    private EditText foundinput;
+    private TextInputLayout foundinput;
     private Button foundbtn;
     private SessionManager sessionmanager;
     private RecyclerView uRecyclerView;
@@ -56,7 +57,7 @@ public class FoundFragment extends Fragment {
         uRecyclerView.setLayoutManager(uLayoutManager);
 
 
-        foundinput = (EditText) v.findViewById(R.id.foundinput);
+        foundinput = (TextInputLayout) v.findViewById(R.id.foundinput);
         foundbtn = (Button) v.findViewById(R.id.foundbtn);
 
         foundbtn.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +65,7 @@ public class FoundFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                String name = foundinput.getText().toString().trim();
+                String name = foundinput.getEditText().getText().toString().trim();
 
                 if (!name.isEmpty()) {
 
@@ -100,6 +101,7 @@ public class FoundFragment extends Fragment {
                 }
                 uAdapter = new RecyclerUsersAdapter(user, getActivity());
                 uRecyclerView.setAdapter(uAdapter);
+
             }
 
             @Override

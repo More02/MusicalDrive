@@ -1,105 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="4dp">
 
-    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvnews"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp"
-        card_view:cardBackgroundColor="@color/bg"
-        card_view:cardCornerRadius="10dp"
-        card_view:contentPadding="10dp">
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp">
 
-
-
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/person_namenews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginBottom="20dp"
-            android:textColor="#4E54B4"/>
-
-
-
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/colorPrimary"/>
         <LinearLayout
             android:id="@+id/musicviewnews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="right"
-            android:layout_marginTop="20dp">
+            android:gravity="right">
 
             <ImageButton
                 android:id="@+id/playbtnews"
-                android:layout_width="28dp"
-                android:layout_height="31dp"
-                android:src="@drawable/playnormal"
-                android:layout_marginTop="5dp"/>
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/play_new"
+                android:layout_marginTop="25dp"
+                app:elevation="0dp"
+                android:scaleType="center"
+                android:background="@null"/>
 
             <ImageButton
                 android:id="@+id/pausebtnews"
-                android:layout_width="28dp"
+                android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/pausenormal"
-                android:layout_marginTop="5dp"/>
+                android:src="@drawable/pause_new"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="2dp"
+                app:elevation="0dp"
+                android:scaleType="center"
+                android:background="@null"/>
 
             <ImageButton
                 android:id="@+id/stopbtnews"
-                android:layout_width="28dp"
+                android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/stopnormal"
+                android:src="@drawable/stop_new"
                 android:layout_marginRight="3dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="2dp"
+                app:elevation="0dp"
+                android:scaleType="center"
+                android:background="@null"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_recycler_itemnews"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:gravity="center_vertical"
-                android:textColor="#4E54B4"
-                android:layout_marginLeft="3dp"/>
-
-            <!--<ImageButton-->
-            <!--android:id="@+id/likebt"-->
-            <!--android:layout_width="27dp"-->
-            <!--android:layout_height="32dp"-->
-            <!--android:background="@color/white"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:layout_marginLeft="-22dp"-->
-            <!--android:src="@drawable/like"/>-->
-
-
-
-            <CheckBox
-                android:id="@+id/likebtnews"
-                android:layout_width="27dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="10dp"
-                android:button="@drawable/checkbox_selector"
-                android:layout_marginLeft="-22dp"/>
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="20dp"/>
 
 
 
 
         </LinearLayout>
 
-        <!--<TextView-->
-            <!--android:id="@+id/numberlikesnews"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:textColor="#A9ABFE"-->
-            <!--android:layout_marginLeft="70dp"/>-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/numberlikesnews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_gravity="right"/>
+
+        <CheckBox
+            android:id="@+id/likebtnews"
+
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="-28dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginRight="15dp"
+            android:button="@drawable/checkbox_selector" />
 
 
-
-    </androidx.cardview.widget.CardView>
-
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
+
+

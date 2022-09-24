@@ -62,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:gravity="center_vertical"
-                android:textColor="#4E54B4"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginLeft="3dp"/>
 
             <!--<ImageButton-->

@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.example.commercialdirector.myitschool.Activity.UserActivity;
 import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.models.User;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
@@ -48,15 +50,15 @@ public class RecyclerUsersAdapter extends RecyclerView.Adapter<RecyclerUsersAdap
     }
 
     public class PersonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        CardView cv;
-        TextView person_name;
+        MaterialCardView cv;
+        MaterialTextView person_name;
         ImageView person_photo;
 
 
         public PersonViewHolder(View v) {
             super(v);
-            cv = (CardView)v.findViewById(R.id.cv);
-            person_name = (TextView)v.findViewById(R.id.person_name);
+            cv = (MaterialCardView)v.findViewById(R.id.cv);
+            person_name = (MaterialTextView)v.findViewById(R.id.person_name);
             person_photo = (ImageView)v.findViewById(R.id.person_photo);
 
             cv.setOnClickListener(this);
@@ -72,6 +74,7 @@ public class RecyclerUsersAdapter extends RecyclerView.Adapter<RecyclerUsersAdap
                     Intent intent=new Intent(context, UserActivity.class);
                     intent.putExtra(USER_ID,users.get(getPosition()).getId());
                     intent.putExtra(USER_NAME,users.get(getPosition()).getName());
+                    person_name.setText(intent.getStringExtra(USER_NAME));
                     context.startActivity(intent);
                 };break;
 
