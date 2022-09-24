@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.core.app.ActivityCompat;
@@ -42,6 +43,7 @@ import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
 import com.example.commercialdirector.myitschool.models.Result_Music;
 import com.example.commercialdirector.myitschool.models.User;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -96,6 +98,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         View v= inflater.inflate(R.layout.fragment_profile, container, false);
 
 
@@ -109,7 +112,7 @@ public class ProfileFragment extends Fragment {
 
 
 
-        userPhotoimageView = (ImageView)v.findViewById(R.id.userPhotoimageView);
+        userPhotoimageView = (ShapeableImageView)v.findViewById(R.id.userPhotoimageView);
         btnUserPhoto = (Button)v.findViewById(R.id.btnUserPhoto);
         btnUserPhoto.setOnClickListener(new View.OnClickListener() {
            @Override
