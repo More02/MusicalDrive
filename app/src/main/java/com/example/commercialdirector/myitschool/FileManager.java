@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.app.AlertDialog;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -64,7 +65,24 @@ public class FileManager extends ListActivity{
         if (aDirectory.isDirectory()){
 
             this.currentDirectory = aDirectory;
-            fill(aDirectory.listFiles());
+            this.currentDirectory = aDirectory;
+            File[] files = aDirectory.listFiles(new FileFilter() {
+                @Override
+                public boolean accept(File pathname) {
+                    if (pathname.getName().endsWith(".mp3") || pathname.getName().endsWith(".ogg") ||
+                            pathname.getName().endsWith(".WAV") ||  pathname.getName().endsWith(".AIFF") ||
+                            pathname.getName().endsWith(".APE") || pathname.getName().endsWith(".FLAC") ||
+                            pathname.isDirectory()) {
+                        return true;
+
+                    }
+
+                    else
+                        return false;
+                }
+            });
+            fill(files);
+
 
 
             TextView titleManager = (TextView) findViewById(R.id.titleManager);
