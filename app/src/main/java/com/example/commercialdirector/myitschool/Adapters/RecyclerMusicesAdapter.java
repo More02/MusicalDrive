@@ -3,8 +3,8 @@ package com.example.commercialdirector.myitschool.Adapters;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +12,11 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
-import com.example.commercialdirector.myitschool.fragments.ProfileFragment;
 import com.example.commercialdirector.myitschool.models.Likei;
 import com.example.commercialdirector.myitschool.models.Likes;
 import com.example.commercialdirector.myitschool.models.Media;

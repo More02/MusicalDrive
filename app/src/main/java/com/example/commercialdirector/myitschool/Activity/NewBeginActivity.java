@@ -1,19 +1,14 @@
 package com.example.commercialdirector.myitschool.Activity;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 
 import com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter;
 import com.example.commercialdirector.myitschool.Helper.SQLiteHandler;
@@ -21,10 +16,6 @@ import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
-import com.example.commercialdirector.myitschool.fragments.FoundFragment;
-import com.example.commercialdirector.myitschool.fragments.NewFragment;
-import com.example.commercialdirector.myitschool.fragments.NewsFragment;
-import com.example.commercialdirector.myitschool.fragments.ProfileFragment;
 import com.example.commercialdirector.myitschool.models.User;
 import com.example.commercialdirector.myitschool.models.Users;
 

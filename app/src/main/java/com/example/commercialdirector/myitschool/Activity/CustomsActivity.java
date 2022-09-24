@@ -1,34 +1,21 @@
 package com.example.commercialdirector.myitschool.Activity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter;
 import com.example.commercialdirector.myitschool.Helper.SQLiteHandler;
 import com.example.commercialdirector.myitschool.Helper.SessionManager;
-import com.example.commercialdirector.myitschool.HomeActivity;
 import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
-import com.example.commercialdirector.myitschool.connection.AppController;
 import com.example.commercialdirector.myitschool.models.Result_Querry;
 import com.example.commercialdirector.myitschool.models.User;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MusicalDrive.iml" filepath="$PROJECT_DIR$/MusicalDrive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.unitTest.iml" />
     </modules>
   </component>
 </project>
