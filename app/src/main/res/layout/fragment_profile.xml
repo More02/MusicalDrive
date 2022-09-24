@@ -20,22 +20,15 @@
             <!--android:layout_marginLeft="15dp"-->
             <!--android:layout_marginTop="20dp"/>-->
 
-        <MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:textColor="#477FB4"
-            android:layout_marginTop="17dp"
-            android:text="Мой логин:"
-            android:textSize="17dp"/>
 
-        <TextView
+
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/userMainId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#7484B4"
             android:layout_marginTop="17dp"
-            android:textSize="17dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -115,35 +108,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_music"
+            android:text="@string/my_music"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="20dp"
-            android:textColor="#7484B4"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:textSize="20dp"
             />
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/AddMusic"
-            android:layout_width="38dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/plusnew"
-            app:backgroundTint="#A8ABFC"
-            android:layout_gravity="bottom|right"/>
-
+            android:src = "@drawable/plus_new"
+            android:scaleType="center"
+            app:fabSize="mini"
+            app:maxImageSize="45dp"
+            app:elevation="0dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#5971FC"
-        android:text="@string/my_music"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
-        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/my_recycler_view"
