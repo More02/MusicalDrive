@@ -50,7 +50,9 @@ public class FileManager extends ListActivity{
 
     }
 
-        private void upOneLevel(){
+
+
+    private void upOneLevel(){
         if(this.currentDirectory.getParent() != null) {
             this.browseTo(this.currentDirectory.getParentFile());
         }
