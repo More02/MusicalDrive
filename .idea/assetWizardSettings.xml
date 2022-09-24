@@ -37,7 +37,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\mbaka\Downloads\add-white-android\res\drawable-xxxhdpi\baseline_add_white_48.png" />
+                                                <entry key="imagePath" value="C:\Users\mbaka\Downloads\likepost22.jpg" />
                                                 <entry key="opacityPercent" value="60" />
                                               </map>
                                             </option>
@@ -71,8 +71,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\mbaka\Downloads\add-white-android\res\drawable-xxxhdpi\baseline_add_white_48.png" />
-                                      <entry key="outputName" value="plus" />
+                                      <entry key="imageAsset" value="C:\Users\mbaka\Downloads\likepost22.jpg" />
+                                      <entry key="outputName" value="like22" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -325,7 +325,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../AppData/Local/Android/Sdk/icons/material/materialicons/stop/baseline_stop_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../AppData/Local/Android/Sdk/icons/material/materialicons/favorite_border/baseline_favorite_border_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -335,7 +335,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="stop_new" />
+                            <entry key="color" value="3d2a67" />
+                            <entry key="outputName" value="ic_baseline_favorite_border_24" />
                             <entry key="sourceFile" value="C:\Users\mbaka\MusicalDrive" />
                           </map>
                         </option>
