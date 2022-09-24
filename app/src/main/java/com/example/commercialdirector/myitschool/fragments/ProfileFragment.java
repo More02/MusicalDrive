@@ -1,17 +1,23 @@
 package com.example.commercialdirector.myitschool.fragments;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -73,13 +79,14 @@ public class ProfileFragment extends Fragment {
     private TextView userMainId;
     private User user;
     private Button btnCustoms;
+    private final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 100;
 
 
 
     int i = 1;
 
 
-    
+
     public ProfileFragment() {
 
     }
@@ -183,14 +190,41 @@ public class ProfileFragment extends Fragment {
 
 
             public void onClick (View v) {
-                Intent i = new Intent(getActivity(), FileManager.class);
-                startActivityForResult(i,REQUEST);
+
+                // проверка наличия разрешения на использование камеры
+                if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+                }
+                else {
+                    Intent i = new Intent(getActivity(), FileManager.class);
+                    startActivityForResult(i,REQUEST);
+                }
+
+
             }
+
+
         });
         return v;
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // если пользователь закрыл запрос на разрешение, не дав ответа, массив grantResults будет пустым
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent i = new Intent(getActivity(), FileManager.class);
+                    startActivityForResult(i,REQUEST);
+                } else {
+                    String errorMessage = "Для добавления нового файла необходимо предоставить разрешение на доступ к файловой системе";
+                    Toast.makeText(getActivity(), errorMessage, Toast.LENGTH_SHORT).show();
+                }
 
+                return;
+            }
+        }
+    }
 
 
     @Override
