@@ -29,7 +29,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterActivity extends Activity{
+import androidx.appcompat.app.AppCompatActivity;
+
+public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnRegister;
     private Button btnLinkToLogin;
