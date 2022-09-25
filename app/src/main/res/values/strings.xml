@@ -22,7 +22,7 @@
     <string name="add_music"><font size="15"><b>Добавить аудиозапись</b></font></string>
     <string name="my_music"><font size="17"><b>Мои аудиозаписи:</b></font></string>
     <string name="my_music_user"><font size="17"><b>Список аудиозаписей:</b></font></string>
-    <string name="my_new"><font size="17"><b>Список моих подписчиков:</b></font></string>
+    <string name="my_new"><font size="17"><b>Подписчики</b></font></string>
     <string name="my_podpiski"><font size="17"><b>Список моих подписок:</b></font></string>
     <string name="my_name"><font size="17"><b>Логин пользователя:</b></font></string>
     <string name="user_music"><font size="17"><b>Список аудиозаписей:</b></font></string>

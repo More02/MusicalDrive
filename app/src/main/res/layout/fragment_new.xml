@@ -1,9 +1,10 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:colorBackground="@color/Background"
     android:orientation="vertical"
-    android:background="@drawable/background2"
     tools:context="com.example.commercialdirector.myitschool.fragments.NewFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,33 +14,20 @@
        android:layout_height="match_parent"
        android:orientation="horizontal">
 
-       <!--<ImageButton-->
-           <!--android:id="@+id/btnpodpichiki"-->
-           <!--android:layout_width="135dp"-->
-           <!--android:layout_height="30dp" />-->
-
-       <!--<Button-->
-           <!--android:id="@+id/btnpodpiski"-->
-           <!--android:layout_width="135dp"-->
-           <!--android:layout_height="30dp"-->
-           <!--android:text="Мои подписки"-->
-           <!--android:background="#070820"-->
-           <!--android:textAllCaps="false"-->
-           <!--android:textColor="#477FB4"-->
-           <!--android:textStyle="bold"-->
-           <!--android:layout_marginBottom="10dp"/>-->
-
-
 
    </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    
+    <com.google.android.material.textview.MaterialTextView
+        android:textColor="@color/colorPrimary"
         android:text="@string/my_new"
-        android:textColor="#5971FC"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="8dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="20dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvnew"
         android:layout_width="match_parent"
