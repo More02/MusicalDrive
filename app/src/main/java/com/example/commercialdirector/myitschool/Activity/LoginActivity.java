@@ -20,6 +20,7 @@ import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
 import com.example.commercialdirector.myitschool.connection.AppController;
 import com.example.commercialdirector.myitschool.models.User;
+import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,8 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnLogin;
     private Button btnLinkToRegister;
-    private EditText inputEmail;
-    private EditText inputPassword;
+    private TextInputLayout inputEmail;
+    private TextInputLayout inputPassword;
     private ProgressDialog pDialog;
     private SessionManager session;
     private SQLiteHandler db;
@@ -46,8 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        inputEmail = (EditText)findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
+        inputEmail = (TextInputLayout)findViewById(R.id.email);
+        inputPassword = (TextInputLayout) findViewById(R.id.password);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
 
@@ -73,8 +74,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                String email = inputEmail.getText().toString().trim();
-                String password = inputPassword.getText().toString().trim();
+                String email = inputEmail.getEditText().getText().toString().trim();
+                String password = inputPassword.getEditText().getText().toString().trim();
 
 
                 if (!email.isEmpty() && !password.isEmpty()) {

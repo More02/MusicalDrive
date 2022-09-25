@@ -21,6 +21,7 @@ import com.example.commercialdirector.myitschool.HomeActivity;
 import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
 import com.example.commercialdirector.myitschool.connection.AppController;
+import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,9 +33,9 @@ public class RegisterActivity extends Activity{
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnRegister;
     private Button btnLinkToLogin;
-    private EditText inputFullName;
-    private EditText inputEmail;
-    private EditText inputPassword;
+    private TextInputLayout inputFullName;
+    private TextInputLayout inputEmail;
+    private TextInputLayout inputPassword;
     private ProgressDialog pDialog;
     private SessionManager session;
     private SQLiteHandler db;
@@ -44,9 +45,9 @@ public class RegisterActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        inputFullName = (EditText) findViewById(R.id.name);
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
+        inputFullName = (TextInputLayout) findViewById(R.id.name);
+        inputEmail = (TextInputLayout) findViewById(R.id.email);
+        inputPassword = (TextInputLayout) findViewById(R.id.password);
         btnRegister = (Button) findViewById(R.id.btnRegister);
         btnLinkToLogin = (Button) findViewById(R.id.btnLinkToLoginScreen);
         Log.d("error",TAG);
@@ -72,9 +73,9 @@ public class RegisterActivity extends Activity{
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String name = inputFullName.getText().toString().trim();
-                String email = inputEmail.getText().toString().trim();
-                String password = inputPassword.getText().toString().trim();
+                String name = inputFullName.getEditText().getText().toString().trim();
+                String email = inputEmail.getEditText().getText().toString().trim();
+                String password = inputPassword.getEditText().getText().toString().trim();
 
                 if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
                     registerUser(name, email, password);

@@ -16,6 +16,7 @@ import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
 import com.example.commercialdirector.myitschool.models.Result_Querry;
 import com.example.commercialdirector.myitschool.models.User;
+import com.google.android.material.textfield.TextInputLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,12 +25,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CustomsActivity extends AppCompatActivity {
-    private EditText userlogin;
+    private TextInputLayout userlogin;
     private SessionManager sessionManager;
     private Button savelogin;
     private Button savepassword;
-    private EditText oldpassword;
-    private EditText newpassword;
+    private TextInputLayout oldpassword;
+    private TextInputLayout newpassword;
     private ProgressDialog pDialog;
     private SQLiteHandler db;
 
@@ -39,19 +40,19 @@ public class CustomsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customs);
 
 
-        userlogin = (EditText) findViewById(R.id.userlogin);
+        userlogin = (TextInputLayout) findViewById(R.id.userlogin);
         SessionManager sessionManager = new SessionManager(getApplicationContext());
         String name =  sessionManager.getUser().getName();
-        userlogin.setText(name);
+        userlogin.getEditText().setText(name);
         final int id = sessionManager.getUser().getId();
 
         savelogin = (Button) findViewById(R.id.savelogin);
         savelogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = userlogin.getText().toString().trim();
+                String name = userlogin.getEditText().getText().toString().trim();
                 updateLogin(id, name);
-                userlogin.setText(name);
+                userlogin.getEditText().setText(name);
             }
         });
 

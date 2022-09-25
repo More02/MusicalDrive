@@ -18,7 +18,7 @@
    </LinearLayout>
 
 
-    
+
     <com.google.android.material.textview.MaterialTextView
         android:textColor="@color/colorPrimary"
         android:text="@string/my_new"

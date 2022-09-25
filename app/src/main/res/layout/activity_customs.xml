@@ -5,68 +5,135 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:colorBackground="@color/Background"
     tools:context="com.example.commercialdirector.myitschool.Activity.CustomsActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Редактирование данных профиля:"
-        android:textStyle="bold"
-        android:textSize="15dp"
+        android:textColor="@color/colorPrimary"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="5dp"/>
-    <TextView
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        />
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Логин:"
         android:textStyle="bold"
-        android:textSize="14dp"/>
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userlogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Логин"
+
+        android:padding="10dp"
+        android:textColorHint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/Widget.Material3.Button"
         android:text="Сохранить новый логин"
         android:layout_marginBottom="10dp"
-        android:id="@+id/savelogin"/>
+        android:id="@+id/savelogin"
+        android:layout_marginLeft="10dp"/>
 
-    <TextView
+
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Редактирование пароля:"
-        android:layout_marginBottom="5dp"
+        android:text="Пароль:"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="14dp"
-        android:layout_marginTop="5dp"/>
-    <TextView
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        />
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Введите старый пароль:"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text="Введите старый пароль:"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/oldpassword"
-        android:hint="Старый пароль"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Старый пароль"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColorHint="@color/colorPrimary">
 
-    <TextView
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Введите новый пароль:"/>
+        android:text="Введите новый пароль:"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newpassword"
-        android:hint="Новый пароль"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Новый пароль"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColorHint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:layout_width="wrap_content"
+        style="@style/Widget.Material3.Button"
         android:layout_height="wrap_content"
         android:text="Сохранить новый пароль"
         android:layout_marginTop="5dp"
-        android:id="@+id/savepassword"/>
+        android:id="@+id/savepassword"
+        android:layout_marginLeft="10dp"/>
 
 </LinearLayout>

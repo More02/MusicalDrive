@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background2"
+    android:colorBackground="@color/Background"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.commercialdirector.myitschool.Activity.NewBeginActivity">
@@ -35,11 +35,11 @@
 
     </FrameLayout>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/my_podpiski"
-        android:textColor="#5971FC"
+        android:textColor="@color/colorPrimary"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="8dp"/>
 

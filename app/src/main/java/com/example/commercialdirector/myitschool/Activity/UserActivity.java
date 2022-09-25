@@ -79,7 +79,7 @@ public class UserActivity extends AppCompatActivity {
         call.enqueue(new Callback<Podpiskas>() {
             @Override
             public void onResponse(Call<Podpiskas> call, Response<Podpiskas> response) {
-                Toast.makeText(getApplicationContext(), Integer.toString(response.body().getPodpiskas().size()), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), Integer.toString(response.body().getPodpiskas().size()), Toast.LENGTH_SHORT).show();
                 if (response.body().getPodpiskas().size() != 0) {
                     btnPodpiska.setVisibility(View.GONE);
                     btnOtpiska.setVisibility(View.VISIBLE);
