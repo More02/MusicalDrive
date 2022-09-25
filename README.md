@@ -20,6 +20,7 @@
 
 # Tech
 * Java
+* Material Design 3
 * Retrofit
 * PHP
 * OpenServer
