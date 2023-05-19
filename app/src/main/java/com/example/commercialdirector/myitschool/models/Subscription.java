@@ -10,9 +10,15 @@ public class Subscription {
         this.id_user2 = id_user2;
     }
 
-    public int getId_podpiska() { return id_podpiska; }
+    public int getId_podpiska() {
+        return id_podpiska;
+    }
 
-    public int getId_user1() { return id_user1; }
+    public int getId_user1() {
+        return id_user1;
+    }
 
-    public int getId_user2() { return id_user2; }
+    public int getId_user2() {
+        return id_user2;
+    }
 }

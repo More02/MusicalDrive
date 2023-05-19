@@ -4,7 +4,7 @@ package com.example.commercialdirector.myitschool.connection;
 
 import com.example.commercialdirector.myitschool.models.Likes;
 import com.example.commercialdirector.myitschool.models.Musics;
-import com.example.commercialdirector.myitschool.models.News;
+import com.example.commercialdirector.myitschool.models.NewsAll;
 import com.example.commercialdirector.myitschool.models.Subscriptions;
 import com.example.commercialdirector.myitschool.models.Result;
 import com.example.commercialdirector.myitschool.models.ResultMusic;
@@ -64,7 +64,7 @@ public interface APIService {
     );
 
     @GET("news/{id_user1}")
-    Call<News> news (
+    Call<NewsAll> news (
             @Path("id_user1") int id_user1
     );
 

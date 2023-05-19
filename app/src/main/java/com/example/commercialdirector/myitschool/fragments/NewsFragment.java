@@ -10,18 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter;
 import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
-import com.example.commercialdirector.myitschool.models.New;
-import com.example.commercialdirector.myitschool.models.News;
+import com.example.commercialdirector.myitschool.models.NewsAll;
 import com.example.commercialdirector.myitschool.models.User;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -57,17 +53,17 @@ public class NewsFragment extends Fragment {
 
         User user = sessionmanager.getUser();
         int id = user.getId();
-        Call<News> call = service.news(id);
-        call.enqueue(new Callback<News>() {
+        Call<NewsAll> call = service.news(id);
+        call.enqueue(new Callback<NewsAll>() {
             @Override
-            public void onResponse(Call<News> call, Response<News> response) {
+            public void onResponse(Call<NewsAll> call, Response<NewsAll> response) {
                 newsAdapter = new RecyclerNewsAdapter(response.body().getNews(), getActivity());
                 nRecyclerView.setAdapter(newsAdapter);
 
             }
 
             @Override
-            public void onFailure(Call<News> call, Throwable t) {
+            public void onFailure(Call<NewsAll> call, Throwable t) {
 
             }
         });

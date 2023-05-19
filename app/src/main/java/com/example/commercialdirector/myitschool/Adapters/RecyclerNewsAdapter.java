@@ -14,12 +14,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.commercialdirector.myitschool.R;
-import com.example.commercialdirector.myitschool.models.New;
+import com.example.commercialdirector.myitschool.models.News;
 
 import java.util.ArrayList;
 
 public class RecyclerNewsAdapter extends RecyclerView.Adapter<RecyclerNewsAdapter.ViewHolder> {
-    private final ArrayList<New> news;
+    private final ArrayList<News> news;
     public static final String USER_NAME = "id_name";
     public static final String USER_ID = "id_user";
 
@@ -43,7 +43,7 @@ public class RecyclerNewsAdapter extends RecyclerView.Adapter<RecyclerNewsAdapte
         return news.size();
     }
 
-    public RecyclerNewsAdapter(ArrayList<New> news, Context mCtx) {
+    public RecyclerNewsAdapter(ArrayList<News> news, Context mCtx) {
         this.news = news;
     }
 
