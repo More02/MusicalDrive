@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.commercialdirector.myitschool.Adapters.RecyclerMusiceAdapter;
+import com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter;
 import com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter;
 import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.R;
@@ -39,7 +39,7 @@ public class UserActivity extends AppCompatActivity {
 
     private TextView userLoginId;
     private RecyclerView mRecyclerView;
-    private RecyclerMusiceAdapter mAdapter;
+    private RecyclerMusicAdapter mAdapter;
     private Button btnSubscribe;
     private Button btnUnsubscribe;
 
@@ -178,7 +178,7 @@ public class UserActivity extends AppCompatActivity {
         call.enqueue(new Callback<Musics>() {
             @Override
             public void onResponse(Call<Musics> call, Response<Musics> response) {
-                mAdapter = new RecyclerMusiceAdapter(response.body().getMusics(), getApplicationContext());
+                mAdapter = new RecyclerMusicAdapter(response.body().getMusics(), getApplicationContext());
                 mRecyclerView.setAdapter(mAdapter);
             }
 

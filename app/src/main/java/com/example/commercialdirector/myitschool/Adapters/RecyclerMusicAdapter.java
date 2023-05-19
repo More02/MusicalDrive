@@ -39,23 +39,23 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class RecyclerMusiceAdapter extends RecyclerView.Adapter<RecyclerMusiceAdapter.ViewHolder> {
+public class RecyclerMusicAdapter extends RecyclerView.Adapter<RecyclerMusicAdapter.ViewHolder> {
 
     private final ArrayList<Music> mDataset;
     private final Context mCtx;
     private Media media;
     private RecyclerView mRecyclerView;
-    private RecyclerMusiceAdapter mAdapter;
+    private RecyclerMusicAdapter mAdapter;
     private boolean isLikeSet;
 
-    public RecyclerMusiceAdapter(ArrayList<Music> dataset, Context mCtx) {
+    public RecyclerMusicAdapter(ArrayList<Music> dataset, Context mCtx) {
         mDataset = dataset;
         this.mCtx = mCtx;
     }
 
     @NonNull
     @Override
-    public RecyclerMusiceAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerMusicAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
 
@@ -135,19 +135,19 @@ public class RecyclerMusiceAdapter extends RecyclerView.Adapter<RecyclerMusiceAd
                 ;
                 break;
                 case R.id.likebt: {
-                    int likei = mDataset.get(getPosition()).getIdLike();
+                    int like = mDataset.get(getPosition()).getIdLike();
                     //numberlikes.setText(likei);
                     String name_music = mDataset.get(getPosition()).getNameMusic();
                     int id_user = mDataset.get(getPosition()).getIdUser();
                     String path = mDataset.get(getPosition()).getPath();
                     int id_music = mDataset.get(getPosition()).getIdMusic();
                     if (likeBtn.isChecked()) {
-                        likei++;
-                        updateMusic(name_music, id_user, path, likei, id_music);
+                        like++;
+                        updateMusic(name_music, id_user, path, like, id_music);
                         addLike(id_music, id_user);
                     } else {
-                        likei--;
-                        updateMusic(name_music, id_user, path, likei, id_music);
+                        like--;
+                        updateMusic(name_music, id_user, path, like, id_music);
                         deleteLike(id_music, id_user);
                     }
 
@@ -296,7 +296,7 @@ public class RecyclerMusiceAdapter extends RecyclerView.Adapter<RecyclerMusiceAd
         call.enqueue(new Callback<Musics>() {
             @Override
             public void onResponse(Call<Musics> call, Response<Musics> response) {
-                mAdapter = new RecyclerMusiceAdapter(response.body().getMusics(), mCtx);
+                mAdapter = new RecyclerMusicAdapter(response.body().getMusics(), mCtx);
                 mRecyclerView.setAdapter(mAdapter);
             }
 

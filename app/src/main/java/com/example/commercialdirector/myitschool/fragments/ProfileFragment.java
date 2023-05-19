@@ -30,7 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.commercialdirector.myitschool.Activity.CustomActivity;
-import com.example.commercialdirector.myitschool.Adapters.RecyclerMusiceAdapter;
+import com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter;
 import com.example.commercialdirector.myitschool.FileManager;
 import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.models.Music;
@@ -58,7 +58,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileFragment extends Fragment {
     private RecyclerView mRecyclerView;
-    private RecyclerMusiceAdapter mAdapter;
+    private RecyclerMusicAdapter mAdapter;
     private static final String FILENAME = "File";
     private static final int REQUEST = 0;
     private SessionManager sessionmanager;
@@ -133,7 +133,7 @@ public class ProfileFragment extends Fragment {
         call.enqueue(new Callback<Musics>() {
             @Override
             public void onResponse(Call<Musics> call, Response<Musics> response) {
-                mAdapter = new RecyclerMusiceAdapter(response.body().getMusics(), getActivity());
+                mAdapter = new RecyclerMusicAdapter(response.body().getMusics(), getActivity());
                 mRecyclerView.setAdapter(mAdapter);
             }
 
@@ -283,7 +283,7 @@ public class ProfileFragment extends Fragment {
         call.enqueue(new Callback<Musics>() {
             @Override
             public void onResponse(Call<Musics> call, Response<Musics> response) {
-                mAdapter = new RecyclerMusiceAdapter(response.body().getMusics(), getActivity());
+                mAdapter = new RecyclerMusicAdapter(response.body().getMusics(), getActivity());
                 mRecyclerView.setAdapter(mAdapter);
             }
 
