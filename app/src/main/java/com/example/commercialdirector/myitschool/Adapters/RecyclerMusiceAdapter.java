@@ -110,7 +110,7 @@ public class RecyclerMusiceAdapter extends RecyclerView.Adapter<RecyclerMusiceAd
                     String path = mDataset.get(getPosition()).getPath();
                     String music = mDataset.get(getPosition()).getNameMusic();
                     media = new Media(path + "/" + music, mCtx);
-                    media.play(v);
+                    media.play();
 //                        pausebt.setEnabled(true);
 //                        stopbt.setEnabled(true);
 //                        playbt.setEnabled(false);
@@ -118,7 +118,7 @@ public class RecyclerMusiceAdapter extends RecyclerView.Adapter<RecyclerMusiceAd
                 ;
                 break;
                 case R.id.pausebt: {
-                    media.pause(v);
+                    media.pause();
                     //   pausebt.setEnabled(false);
 //                            stopbt.setEnabled(false);
 //                            playbt.setEnabled(true);
