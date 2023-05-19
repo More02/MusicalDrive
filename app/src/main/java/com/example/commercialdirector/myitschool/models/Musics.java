@@ -1,6 +1,5 @@
 package com.example.commercialdirector.myitschool.models;
 
-
 import java.util.ArrayList;
 
 public class Musics {
@@ -10,11 +9,11 @@ public class Musics {
 
     }
 
-    public ArrayList<Music> getMusicses() {
+    public ArrayList<Music> getMusics() {
         return musics;
     }
 
-    public void setMusicses(ArrayList<Music> musics) {
+    public void setMusics(ArrayList<Music> musics) {
         this.musics = musics;
     }
 }

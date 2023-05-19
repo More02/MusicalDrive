@@ -29,15 +29,15 @@ public class Music {
         this.likei = likei;
     }
 
-    public int getId_music() {
+    public int getIdMusic() {
         return id_music;
     }
 
-    public String getName_music() {
+    public String getNameMusic() {
         return name_music;
     }
 
-    public int getId_user() {
+    public int getIdUser() {
         return id_user;
     }
 
@@ -45,6 +45,6 @@ public class Music {
         return path;
     }
 
-    public int getLikei() { return likei; }
+    public int getIdLike() { return likei; }
 
 }

@@ -63,9 +63,9 @@
             android:label="@string/title_activity_home"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity.NewBeginActivity"
+            android:name=".Activity.SubscriptionsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activity.CustomsActivity"></activity>
+        <activity android:name=".Activity.CustomActivity"></activity>
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 

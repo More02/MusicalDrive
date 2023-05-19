@@ -7,7 +7,7 @@
     android:colorBackground="@color/Background"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.commercialdirector.myitschool.Activity.NewBeginActivity">
+    tools:context="com.example.commercialdirector.myitschool.Activity.SubscriptionsActivity">
 
 
 

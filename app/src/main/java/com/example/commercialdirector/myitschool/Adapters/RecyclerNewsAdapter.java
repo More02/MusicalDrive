@@ -1,8 +1,8 @@
 package com.example.commercialdirector.myitschool.Adapters;
 
-
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,46 +13,29 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.R;
-import com.example.commercialdirector.myitschool.models.Likei;
-import com.example.commercialdirector.myitschool.models.Music;
 import com.example.commercialdirector.myitschool.models.New;
-import com.example.commercialdirector.myitschool.models.User;
 
 import java.util.ArrayList;
 
-public class RecyclerNewsAdapter extends RecyclerView.Adapter<RecyclerNewsAdapter.ViewHolder>{
-    private Context mCtx;
-    private SessionManager sessionmanager;
-    private RecyclerView mRecyclerView;
-    private RecyclerNewsAdapter rAdapter;
-    private RecyclerMusicesAdapter mAdapter;
-    private ArrayList<Likei> liles = null;
-    private ArrayList<Music> mDataset;
-    private ArrayList<User> users;
-    private ArrayList<New> news;
-    private int id;
+public class RecyclerNewsAdapter extends RecyclerView.Adapter<RecyclerNewsAdapter.ViewHolder> {
+    private final ArrayList<New> news;
+    public static final String USER_NAME = "id_name";
+    public static final String USER_ID = "id_user";
 
-    public static final String USER_NAME="id_name";
-    public static final String USER_ID="id_user";
-
+    @NonNull
     @Override
     public RecyclerNewsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recycler_item_news, parent, false);
 
-        RecyclerNewsAdapter.ViewHolder vh = new RecyclerNewsAdapter.ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(RecyclerNewsAdapter.ViewHolder holder, int position) {
-//        id = mDataset.get(position).getId_user();
-        holder.person_namenews.setText(news.get(position).getName());
-        //holder.musicviewnews.setText
-        holder.tv_recycler_itemnews.setText(news.get(position).getName_music());
-
+        holder.personNameNews.setText(news.get(position).getName());
+        holder.tvRecyclerItemNews.setText(news.get(position).getName_music());
     }
 
     @Override
@@ -62,75 +45,58 @@ public class RecyclerNewsAdapter extends RecyclerView.Adapter<RecyclerNewsAdapte
 
     public RecyclerNewsAdapter(ArrayList<New> news, Context mCtx) {
         this.news = news;
-        this.mCtx = mCtx;
     }
 
-
-
-
-
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private CardView cvnews;
-        private TextView person_namenews;
-        private ImageButton playbtnews;
-        private ImageButton pausebtnews;
-        private ImageButton stopbtnews;
-        private TextView tv_recycler_itemnews;
-        private CheckBox likebtnews;
-//        private TextView numberlikesnews;
-
-
-
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private final TextView personNameNews;
+        private final TextView tvRecyclerItemNews;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
-            cvnews = (CardView)itemView.findViewById(R.id.cvnews);
-            person_namenews = (TextView) itemView.findViewById(R.id.person_namenews);
-            playbtnews = (ImageButton)itemView.findViewById(R.id.playbtnews);
-            pausebtnews = (ImageButton)itemView.findViewById(R.id.pausebtnews);
-            stopbtnews = (ImageButton)itemView.findViewById(R.id.stopbtnews);
-            tv_recycler_itemnews = (TextView)itemView.findViewById(R.id.tv_recycler_itemnews);
-            likebtnews = (CheckBox)itemView.findViewById(R.id.likebtnews);
-//            numberlikesnews = (TextView)itemView.findViewById(R.id.numberlikesnews);
-
-
-
-            playbtnews.setOnClickListener(this);
-            pausebtnews.setOnClickListener(this);
-            stopbtnews.setOnClickListener(this);
-            cvnews.setOnClickListener(this);
-            likebtnews.setOnClickListener(this);
-//            person_namenews.setOnClickListener(this);
-
+            CardView cvNews = (CardView) itemView.findViewById(R.id.cvnews);
+            personNameNews = (TextView) itemView.findViewById(R.id.person_namenews);
+            ImageButton playBtnNews = (ImageButton) itemView.findViewById(R.id.playbtnews);
+            ImageButton pauseBtnNews = (ImageButton) itemView.findViewById(R.id.pausebtnews);
+            ImageButton stopBtnNews = (ImageButton) itemView.findViewById(R.id.stopbtnews);
+            tvRecyclerItemNews = (TextView) itemView.findViewById(R.id.tv_recycler_itemnews);
+            CheckBox likeBtnNews = (CheckBox) itemView.findViewById(R.id.likebtnews);
+            playBtnNews.setOnClickListener(this);
+            pauseBtnNews.setOnClickListener(this);
+            stopBtnNews.setOnClickListener(this);
+            cvNews.setOnClickListener(this);
+            likeBtnNews.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             int id = v.getId();
             switch (id) {
-                case R.id.playbtnews: {};break;
-                case R.id.pausebtnews:{};break;
-                case R.id.stopbtnews:{};break;
-                case R.id.likebtnews:{};break;
-                case R.id.cvnews:{};break;
-//                case R.id.person_namenews:
-//                {
-//                    Intent intent=new Intent(mCtx, UserActivity.class);
-//                    intent.putExtra(USER_ID,users.get(getPosition()).getId());
-//                    intent.putExtra(USER_NAME,users.get(getPosition()).getName());
-//                    mCtx.startActivity(intent);
-//
-//                };break;
-
+                case R.id.playbtnews: {
+                }
+                ;
+                break;
+                case R.id.pausebtnews: {
+                }
+                ;
+                break;
+                case R.id.stopbtnews: {
+                }
+                ;
+                break;
+                case R.id.likebtnews: {
+                }
+                ;
+                break;
+                case R.id.cvnews: {
+                }
+                ;
+                break;
             }
-
-
         }
     }
 
     @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
 }

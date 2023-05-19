@@ -1,8 +1,5 @@
 package com.example.commercialdirector.myitschool.models;
 
-
-import java.util.ArrayList;
-
 public class User {
     private int id;
     private String name;

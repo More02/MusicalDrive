@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:colorBackground="@color/Background"
-    tools:context="com.example.commercialdirector.myitschool.Activity.CustomsActivity">
+    tools:context="com.example.commercialdirector.myitschool.Activity.CustomActivity">
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"

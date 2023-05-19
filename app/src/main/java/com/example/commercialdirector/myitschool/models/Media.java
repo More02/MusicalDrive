@@ -1,11 +1,9 @@
 package com.example.commercialdirector.myitschool.models;
 
-
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.View;
-
 
 public class Media
 {

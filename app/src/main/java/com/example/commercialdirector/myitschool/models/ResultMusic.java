@@ -3,17 +3,17 @@ package com.example.commercialdirector.myitschool.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Result_Music {
+public class ResultMusic {
     @SerializedName("error")
-    private boolean error;
+    private final boolean error;
 
     @SerializedName("message")
-    private String message;
+    private final String message;
 
     @SerializedName("music")
-    private Music music;
+    private final Music music;
 
-    public Result_Music(boolean error, String message, Music music) {
+    public ResultMusic(boolean error, String message, Music music) {
         this.error = error;
         this.message = message;
         this.music = music;

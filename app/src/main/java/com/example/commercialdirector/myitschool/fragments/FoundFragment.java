@@ -2,14 +2,15 @@ package com.example.commercialdirector.myitschool.fragments;
 
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter;
@@ -22,6 +23,7 @@ import com.example.commercialdirector.myitschool.models.Users;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,18 +33,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class FoundFragment extends Fragment {
-    private TextInputLayout foundinput;
-    private Button foundbtn;
-    private SessionManager sessionmanager;
+    private TextInputLayout foundInput;
     private RecyclerView uRecyclerView;
-    private RecyclerView.LayoutManager uLayoutManager;
     private RecyclerUsersAdapter uAdapter;
 
-
     public FoundFragment() {
-        // Required empty public constructor
-    }
 
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,34 +50,24 @@ public class FoundFragment extends Fragment {
         uRecyclerView = (RecyclerView) v.findViewById(R.id.rvfound);
         uRecyclerView.setHasFixedSize(true);
 
-        uLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager uLayoutManager = new LinearLayoutManager(getActivity());
         uRecyclerView.setLayoutManager(uLayoutManager);
 
+        foundInput = (TextInputLayout) v.findViewById(R.id.foundinput);
+        Button foundBtn = (Button) v.findViewById(R.id.foundbtn);
 
-        foundinput = (TextInputLayout) v.findViewById(R.id.foundinput);
-        foundbtn = (Button) v.findViewById(R.id.foundbtn);
+        foundBtn.setOnClickListener(v1 -> {
+            String name = Objects.requireNonNull(foundInput.getEditText()).getText().toString().trim();
 
-        foundbtn.setOnClickListener(new View.OnClickListener() {
+            if (!name.isEmpty()) {
 
+                getUserByName(name);
 
-            @Override
-            public void onClick(View v) {
-                String name = foundinput.getEditText().getText().toString().trim();
-
-                if (!name.isEmpty()) {
-
-                    getUserByName(name);
-
-                } else {
-                    Toast.makeText(getContext(), "Введите логин пользователя, которого хотите найти", Toast.LENGTH_LONG).show();
-                }
+            } else {
+                Toast.makeText(getContext(), "Введите логин пользователя, которого хотите найти", Toast.LENGTH_LONG).show();
             }
         });
-
-
         return v;
-
-
     }
 
     private void getUserByName(String name) {
@@ -96,7 +83,7 @@ public class FoundFragment extends Fragment {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
                 ArrayList<User> user = response.body().getUsers();
-                if (user.size()==0) {
+                if (user.size() == 0) {
                     Toast.makeText(getActivity(), "Пользователь с таким логином не существует", Toast.LENGTH_LONG).show();
                 }
                 uAdapter = new RecyclerUsersAdapter(user, getActivity());
@@ -106,7 +93,7 @@ public class FoundFragment extends Fragment {
 
             @Override
             public void onFailure(Call<Users> call, Throwable t) {
-                Toast.makeText(getActivity(),t.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
         });

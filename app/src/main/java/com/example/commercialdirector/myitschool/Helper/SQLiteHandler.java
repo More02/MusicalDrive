@@ -13,17 +13,9 @@ import java.util.HashMap;
 public class SQLiteHandler extends SQLiteOpenHelper{
 
     private static final String TAG = SQLiteHandler.class.getSimpleName();
-
-
     private static final int DATABASE_VERSION = 1;
-
-
     private static final String DATABASE_NAME = "android_api";
-
-
     private static final String TABLE_USER = "user";
-
-
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_EMAIL = "email";
@@ -46,35 +38,26 @@ public class SQLiteHandler extends SQLiteOpenHelper{
         Log.d(TAG, "Database tables created");
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
-
-
         onCreate(db);
     }
 
-
     public void addUser(String name, String email, String uid, String created_at) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, name);
         values.put(KEY_EMAIL, email);
         values.put(KEY_UID, uid);
         values.put(KEY_CREATED_AT, created_at);
 
-
         long id = db.insert(TABLE_USER, null, values);
         db.close();
 
         Log.d(TAG, "New user inserted into sqlite: " + id);
     }
-
-
-
 
     public HashMap<String, String> getUserDetails() {
         HashMap<String, String> user = new HashMap<String, String>();
@@ -97,7 +80,6 @@ public class SQLiteHandler extends SQLiteOpenHelper{
 
         return user;
     }
-
 
     public void deleteUsers() {
         SQLiteDatabase db = this.getWritableDatabase();

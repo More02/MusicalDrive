@@ -5,14 +5,15 @@ import java.util.ArrayList;
 
 public class Likes
 {
-    private ArrayList<Likei> likes;
+    private ArrayList<Like> likes;
 
     public Likes() {
 
     }
 
-    public ArrayList<Likei> getLikes() { return likes; }
+    public ArrayList<Like> getLikes() { return likes; }
 
-    public void setLikes(ArrayList<Likei> likes) { this.likes = likes; }
+    public void setLikes(ArrayList<Like> likes) { this.likes = likes; }
 
 }
+

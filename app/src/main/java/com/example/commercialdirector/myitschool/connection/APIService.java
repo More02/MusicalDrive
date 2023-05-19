@@ -5,10 +5,10 @@ package com.example.commercialdirector.myitschool.connection;
 import com.example.commercialdirector.myitschool.models.Likes;
 import com.example.commercialdirector.myitschool.models.Musics;
 import com.example.commercialdirector.myitschool.models.News;
-import com.example.commercialdirector.myitschool.models.Podpiskas;
+import com.example.commercialdirector.myitschool.models.Subscriptions;
 import com.example.commercialdirector.myitschool.models.Result;
-import com.example.commercialdirector.myitschool.models.Result_Music;
-import com.example.commercialdirector.myitschool.models.Result_Querry;
+import com.example.commercialdirector.myitschool.models.ResultMusic;
+import com.example.commercialdirector.myitschool.models.ResultQuerry;
 import com.example.commercialdirector.myitschool.models.Users;
 
 import okhttp3.MultipartBody;
@@ -31,7 +31,7 @@ public interface APIService {
 
     @FormUrlEncoded
     @POST("addMusic")
-    Call<Result_Music> createMusic (
+    Call<ResultMusic> createMusic (
             @Field("name_music") String name_music,
             @Field("id_user") int id_user,
             @Field("path") String path,
@@ -52,7 +52,7 @@ public interface APIService {
     );
 
     @GET("podpiskas/{id_user1}/{id_user2}")
-    Call<Podpiskas> isPodpiskaAdded (
+    Call<Subscriptions> isPodpiskaAdded (
             @Path("id_user1") int id_user1,
             @Path("id_user2") int id_user2
 
@@ -77,7 +77,7 @@ public interface APIService {
 
     @FormUrlEncoded
     @POST("updateMusic/{id_music}")
-    Call<Result_Music> updateMusic (
+    Call<ResultMusic> updateMusic (
             @Path("id_music") int id_music,
             @Field("name_music") String name_music,
             @Field("id_user") int id_user,
@@ -87,35 +87,35 @@ public interface APIService {
 
     @FormUrlEncoded
     @POST("updateLogin/{id}")
-    Call<Result_Querry> updateLogin (
+    Call<ResultQuerry> updateLogin (
             @Path("id") int id,
             @Field("name") String name
     );
 
     @FormUrlEncoded
     @POST("addLike")
-    Call<Result_Querry> addLike (
+    Call<ResultQuerry> addLike (
             @Field("id_music") int id_music,
             @Field("id_user") int id_user
     );
 
     @FormUrlEncoded
     @POST("deleteLike")
-    Call<Result_Querry> deleteLike (
+    Call<ResultQuerry> deleteLike (
             @Field("id_music") int id_music,
             @Field("id_user") int id_user
     );
 
     @FormUrlEncoded
     @POST("podpiska")
-    Call<Result_Querry> podpiska (
+    Call<ResultQuerry> podpiska (
             @Field("id_user1") int id_user1,
             @Field("id_user2") int id_user2
     );
 
     @FormUrlEncoded
     @POST("otpiska")
-    Call<Result_Querry> otpiska (
+    Call<ResultQuerry> otpiska (
             @Field("id_user1") int id_user1,
             @Field("id_user2") int id_user2
     );

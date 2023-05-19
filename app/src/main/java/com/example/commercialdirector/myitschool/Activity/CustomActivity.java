@@ -3,10 +3,9 @@ package com.example.commercialdirector.myitschool.Activity;
 import android.app.ProgressDialog;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.commercialdirector.myitschool.Helper.SQLiteHandler;
@@ -14,9 +13,11 @@ import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.R;
 import com.example.commercialdirector.myitschool.connection.APIService;
 import com.example.commercialdirector.myitschool.connection.AppConfig;
-import com.example.commercialdirector.myitschool.models.Result_Querry;
+import com.example.commercialdirector.myitschool.models.ResultQuerry;
 import com.example.commercialdirector.myitschool.models.User;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,11 +25,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class CustomsActivity extends AppCompatActivity {
+public class CustomActivity extends AppCompatActivity {
     private TextInputLayout userlogin;
     private SessionManager sessionManager;
-    private Button savelogin;
-    private Button savepassword;
     private TextInputLayout oldpassword;
     private TextInputLayout newpassword;
     private ProgressDialog pDialog;
@@ -38,28 +37,21 @@ public class CustomsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customs);
-
-
         userlogin = (TextInputLayout) findViewById(R.id.userlogin);
         SessionManager sessionManager = new SessionManager(getApplicationContext());
-        String name =  sessionManager.getUser().getName();
-        userlogin.getEditText().setText(name);
+        String name = sessionManager.getUser().getName();
+        Objects.requireNonNull(userlogin.getEditText()).setText(name);
         final int id = sessionManager.getUser().getId();
+        Button saveLogin = (Button) findViewById(R.id.savelogin);
 
-        savelogin = (Button) findViewById(R.id.savelogin);
-        savelogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = userlogin.getEditText().getText().toString().trim();
-                updateLogin(id, name);
-                userlogin.getEditText().setText(name);
-            }
+        saveLogin.setOnClickListener(v -> {
+            String name1 = userlogin.getEditText().getText().toString().trim();
+            updateLogin(id, name1);
+            userlogin.getEditText().setText(name1);
         });
 
-        savepassword = (Button) findViewById(R.id.savepassword);
-        savepassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        Button savepassword = (Button) findViewById(R.id.savepassword);
+        savepassword.setOnClickListener(v -> {
 //                String password = newpassword.getText().toString().trim();
 //                if (!password.isEmpty()) {
 //
@@ -72,40 +64,34 @@ public class CustomsActivity extends AppCompatActivity {
 //                            .show();
 //                }
 
-            }
         });
-
-
-
     }
 
-    public void updateLogin (int id, String name){
+    public void updateLogin(int id, String name) {
 
         Retrofit updateLogin = new Retrofit.Builder()
                 .baseUrl(AppConfig.BASE_PUBLIC)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         final APIService service = updateLogin.create(APIService.class);
-        User user = new User (id, name);
-        Call<Result_Querry> call = service.updateLogin(
+        User user = new User(id, name);
+        Call<ResultQuerry> call = service.updateLogin(
                 user.getId(),
                 user.getName()
         );
 
-        call.enqueue(new Callback<Result_Querry>() {
+        call.enqueue(new Callback<ResultQuerry>() {
             @Override
-            public void onResponse(Call<Result_Querry> call, Response<Result_Querry> response) {
-                Toast.makeText(getApplicationContext(),response.body().getMessage(),Toast.LENGTH_LONG).show();
+            public void onResponse(Call<ResultQuerry> call, Response<ResultQuerry> response) {
+                Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
 
             }
 
             @Override
-            public void onFailure(Call<Result_Querry> call, Throwable t) {
-                Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_LONG).show();
+            public void onFailure(Call<ResultQuerry> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
 
 //    private void checkLogin(final String password) {
@@ -123,13 +109,7 @@ public class CustomsActivity extends AppCompatActivity {
 //                try {
 //                    JSONObject jObj = new JSONObject(response);
 //                    boolean error = jObj.getBoolean("error");
-//
-//
 //                    if (!error) {
-//
-//
-//
-//
 ////                        sessionManager.setLogin(true);
 ////
 ////
