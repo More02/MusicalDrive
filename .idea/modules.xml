@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MusicalDrive.iml" filepath="$PROJECT_DIR$/MusicalDrive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MusicalDrive2.iml" filepath="$PROJECT_DIR$/.idea/modules/MusicalDrive2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MusicalDrive2.app.unitTest.iml" />
     </modules>
   </component>
 </project>
