@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidTestResultsUserPreferences">
+    <option name="androidTestResultsTableState">
+      <map>
+        <entry key="148452359">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="320296973953" value="120" />
+                  <entry key="Duration" value="90" />
+                  <entry key="Nexus_5X_API_28_x86" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="ZTE&#10; ZTE Blade A7 2020RU" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

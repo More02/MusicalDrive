@@ -150,6 +150,7 @@ public class RecyclerMusicAdapter extends RecyclerView.Adapter<RecyclerMusicAdap
                         updateMusic(name_music, id_user, path, like, id_music);
                         deleteLike(id_music, id_user);
                     }
+                    numberLikes.setText(String.valueOf(like));
 
                 }
                 ;
