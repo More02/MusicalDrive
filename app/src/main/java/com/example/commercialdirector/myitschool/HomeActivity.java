@@ -16,7 +16,7 @@ import com.example.commercialdirector.myitschool.Activity.LoginActivity;
 import com.example.commercialdirector.myitschool.Helper.SQLiteHandler;
 import com.example.commercialdirector.myitschool.Helper.SessionManager;
 import com.example.commercialdirector.myitschool.fragments.FoundFragment;
-import com.example.commercialdirector.myitschool.fragments.NewFragment;
+import com.example.commercialdirector.myitschool.fragments.SubscribersFragment;
 import com.example.commercialdirector.myitschool.fragments.NewsFragment;
 import com.example.commercialdirector.myitschool.fragments.ProfileFragment;
 
@@ -38,10 +38,7 @@ public class HomeActivity extends AppCompatActivity {
                     fragment=new ProfileFragment();
                     break;
                 case R.id.navigation_new:
-//                        Intent intent = new Intent(HomeActivity.this, NewBeginActivity.class);
-//                        startActivity(intent);
-
-                   fragment=new NewFragment();
+                   fragment=new SubscribersFragment();
                     break;
                 case R.id.navigation_found:
                     fragment=new FoundFragment();
@@ -81,10 +78,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R.id.exitbutton:
-                logoutUser();
-                return true;
+        if (id == R.id.exitbutton) {
+            logoutUser();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

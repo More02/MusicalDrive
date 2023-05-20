@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:colorBackground="@color/Background"
     android:orientation="vertical"
-    tools:context="com.example.commercialdirector.myitschool.fragments.NewFragment">
+    tools:context="com.example.commercialdirector.myitschool.fragments.SubscribersFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
