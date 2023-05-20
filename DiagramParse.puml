@@ -1,0 +1,371 @@
+@startuml
+class com.example.commercialdirector.myitschool.Activity.CustomActivity {
+- TextInputLayout userlogin
+- SessionManager sessionManager
+- TextInputLayout oldpassword
+- TextInputLayout newpassword
+- ProgressDialog pDialog
+- SQLiteHandler db
+# void onCreate(Bundle)
++ void updateLogin(int,String)
+}
+class com.example.commercialdirector.myitschool.Activity.LoginActivity {
+- {static} String TAG
+- TextInputLayout inputEmail
+- TextInputLayout inputPassword
+- ProgressDialog pDialog
+- SessionManager session
+- SQLiteHandler db
++ void onCreate(Bundle)
+- void checkLogin(String,String)
+- void showDialog()
+- void hideDialog()
+}
+class com.example.commercialdirector.myitschool.models.Like {
++ int id_likei
++ int id_music
++ int id_user
++ int getId_likei()
++ int getIdMusic()
++ int getIdUser()
+}
+class com.example.commercialdirector.myitschool.connection.AppController {
++ {static} String TAG
+- RequestQueue mRequestQueue
+- {static} AppController mInstance
++ void onCreate()
++ {static} AppController getInstance()
++ RequestQueue getRequestQueue()
++ void addToRequestQueue(Request<T>,String)
+}
+class com.example.commercialdirector.myitschool.models.NewsAll {
+- ArrayList<News> news
++ ArrayList<News> getNews()
++ void setNews(ArrayList<News>)
+}
+class com.example.commercialdirector.myitschool.Activity.UserActivity {
+- TextView userLoginId
+- RecyclerView mRecyclerView
+- RecyclerMusicAdapter mAdapter
+- Button btnSubscribe
+- Button btnUnsubscribe
+# void onCreate(Bundle)
+- void subscribe(int,int)
+- void unsubscribe(int,int)
+- void getUserByName(String)
++ void update(int)
+}
+class com.example.commercialdirector.myitschool.models.Media {
+- MediaPlayer mPlayer
++ void releaseMedia()
++ void stop()
++ void play()
++ void pause()
+}
+class com.example.commercialdirector.myitschool.models.Music {
++ int id_music
++ String name_music
++ int id_user
++ String path
++ int likei
++ int getIdMusic()
++ String getNameMusic()
++ int getIdUser()
++ String getPath()
++ int getIdLike()
+}
+class com.example.commercialdirector.myitschool.FileManager {
+- List<String> directoryEntries
+- File currentDirectory
+- {static} String FILENAME
+- int REQUEST_CODE_PERMISSION_READ_EXTERNAL_STORAGE
++ void onCreate(Bundle)
+- void upOneLevel()
+- void browseTo(File)
+- void fill(File[])
+# void onListItemClick(ListView,View,int,long)
+}
+class com.example.commercialdirector.myitschool.fragments.FoundFragment {
+- TextInputLayout foundInput
+- RecyclerView uRecyclerView
+- RecyclerUsersAdapter uAdapter
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void getUserByName(String)
+}
+class com.example.commercialdirector.myitschool.HomeActivity {
+~ FragmentManager fragmentManager
+~ FragmentTransaction fragmentTransaction
+~ Fragment fragment
+~ AppCompatActivity activity
+- SQLiteHandler db
+- SessionManager session
+- BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+- void logoutUser()
+}
+class com.example.commercialdirector.myitschool.models.Subscriptions {
+- ArrayList<Subscription> podpiskas
++ ArrayList<Subscription> getPodpiskas()
++ void setPodpiskas(ArrayList<Subscription>)
+}
+class com.example.commercialdirector.myitschool.models.Likes {
+- ArrayList<Like> likes
++ ArrayList<Like> getLikes()
++ void setLikes(ArrayList<Like>)
+}
+class com.example.commercialdirector.myitschool.models.User {
+- int id
+- String name
+- String email
+- String password
++ int getId()
++ String getName()
++ String getEmail()
++ String getPassword()
+}
+class com.example.commercialdirector.myitschool.models.Subscription {
++ int id_podpiska
++ int id_user1
++ int id_user2
++ int getId_podpiska()
++ int getId_user1()
++ int getId_user2()
+}
+class com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter {
+- ArrayList<Music> mDataset
+- Context mCtx
+- Media media
+- RecyclerView mRecyclerView
+- RecyclerMusicAdapter mAdapter
+- boolean isLikeSet
++ RecyclerMusicAdapter.ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ViewHolder,int)
++ int getItemCount()
++ void updateMusic(String,int,String,int,int)
++ void addLike(int,int)
++ void deleteLike(int,int)
+- void isLike()
+- void isNotLike()
++ void update()
+}
+class com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter$ViewHolder {
+- TextView mTextView
+- CheckBox likeBtn
+- TextView numberLikes
++ void onClick(View)
+- void releaseMP()
+}
+class com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter$MTask {
+- CheckBox checkBox
+# Likes doInBackground(Like)
+# void onPostExecute(Likes)
+}
+class com.example.commercialdirector.myitschool.models.Result {
+- String result
++ String getResult()
++ void setResult(String)
+}
+class com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter {
+- ArrayList<News> news
++ {static} String USER_NAME
++ {static} String USER_ID
++ RecyclerNewsAdapter.ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(RecyclerNewsAdapter.ViewHolder,int)
++ int getItemCount()
++ void onAttachedToRecyclerView(RecyclerView)
+}
+class com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter$ViewHolder {
+- TextView personNameNews
+- TextView tvRecyclerItemNews
++ void onClick(View)
+}
+class com.example.commercialdirector.myitschool.fragments.SubscribersFragment {
+- RecyclerView nRecyclerView
+- RecyclerUsersAdapter uAdapter
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void subscribers()
+}
+class com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter {
+- ArrayList<User> users
+- Context context
++ {static} String USER_ID
++ {static} String USER_NAME
++ PersonViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(PersonViewHolder,int)
++ int getItemCount()
++ void onAttachedToRecyclerView(RecyclerView)
+}
+class com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter$PersonViewHolder {
+~ MaterialCardView cv
+~ MaterialTextView person_name
+~ ImageView person_photo
++ void onClick(View)
+}
+class com.example.commercialdirector.myitschool.models.Users {
+- ArrayList<User> users
++ ArrayList<User> getUsers()
++ void setUsers(ArrayList<User>)
+}
+class com.example.commercialdirector.myitschool.fragments.ProfileFragment {
+- RecyclerView mRecyclerView
+- RecyclerMusicAdapter mAdapter
+- {static} String FILENAME
+- {static} int REQUEST
+- SessionManager sessionmanager
+- ImageView userPhotoimageView
+- int Pick_image
+- {static} int CAMERA_PIC_REQUEST
+- {static} int TAKE_PICTURE
+- Uri mOutputFileUri
+- User user
+- int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE
+~ int i
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onRequestPermissionsResult(int,String[],int[])
++ void onActivityResult(int,int,Intent)
+- void uploadMusic(String)
++ void addMusic(String,int,String,int)
++ void update()
+}
+class com.example.commercialdirector.myitschool.models.News {
++ int id_user
++ String name
++ String name_music
++ String path
++ String date_music
++ int getId_user()
++ String getName()
++ String getName_music()
++ String getPath()
++ String getDate_music()
++ void setId_user(int)
++ void setName(String)
++ void setName_music(String)
++ void setPath(String)
++ void setDate_music(String)
+}
+class com.example.commercialdirector.myitschool.connection.AppConfig {
++ {static} String URL_LOGIN
++ {static} String URL_REGISTER
++ {static} String BASE_URL
++ {static} String BASE_PUBLIC
+}
+class com.example.commercialdirector.myitschool.models.ResultMusic {
+- boolean error
+- String message
+- Music music
++ boolean getError()
++ String getMessage()
++ Music getMusic()
+}
+interface com.example.commercialdirector.myitschool.connection.APIService {
+~ Call<Result> uploadMusic(MultipartBody.Part,RequestBody)
+~ Call<ResultMusic> createMusic(String,int,String,int)
+~ Call<Musics> getMusics(int)
+~ Call<Users> getUserByName(String)
+~ Call<Likes> isLikeAdded(int,int)
+~ Call<Subscriptions> isPodpiskaAdded(int,int)
+~ Call<Users> podpischiki(int)
+~ Call<NewsAll> news(int)
+~ Call<Users> podpisci(int)
+~ Call<ResultMusic> updateMusic(int,String,int,String,int)
+~ Call<ResultQuerry> updateLogin(int,String)
+~ Call<ResultQuerry> addLike(int,int)
+~ Call<ResultQuerry> deleteLike(int,int)
+~ Call<ResultQuerry> podpiska(int,int)
+~ Call<ResultQuerry> otpiska(int,int)
+}
+class com.example.commercialdirector.myitschool.models.Musics {
+- ArrayList<Music> musics
++ ArrayList<Music> getMusics()
++ void setMusics(ArrayList<Music>)
+}
+class com.example.commercialdirector.myitschool.models.ResultQuerry {
+- boolean error
+- String message
++ void setError(boolean)
++ void setMessage(String)
++ boolean isError()
++ String getMessage()
+}
+class com.example.commercialdirector.myitschool.Helper.SQLiteHandler {
+- {static} String TAG
+- {static} int DATABASE_VERSION
+- {static} String DATABASE_NAME
+- {static} String TABLE_USER
+- {static} String KEY_ID
+- {static} String KEY_NAME
+- {static} String KEY_EMAIL
+- {static} String KEY_UID
+- {static} String KEY_CREATED_AT
++ void onCreate(SQLiteDatabase)
++ void onUpgrade(SQLiteDatabase,int,int)
++ void addUser(String,String,String,String)
++ HashMap<String,String> getUserDetails()
++ void deleteUsers()
+}
+class com.example.commercialdirector.myitschool.fragments.NewsFragment {
+- RecyclerView nRecyclerView
+- RecyclerNewsAdapter newsAdapter
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.example.commercialdirector.myitschool.Helper.SessionManager {
+- {static} String TAG
+- {static} String SHARED_PREF_NAME
+- {static} String KEY_USER_ID
+- {static} String KEY_USER_NAME
+- {static} String KEY_USER_EMAIL
+~ SharedPreferences pref
+~ Editor editor
+~ Context _context
+~ int PRIVATE_MODE
+- {static} String PREF_NAME
+- {static} String KEY_IS_LOGGEDIN
++ void setLogin(boolean)
++ boolean isLoggedIn()
++ boolean userLogin(User)
++ User getUser()
+}
+class com.example.commercialdirector.myitschool.Activity.RegisterActivity {
+- {static} String TAG
+- TextInputLayout inputFullName
+- TextInputLayout inputEmail
+- TextInputLayout inputPassword
+- ProgressDialog pDialog
+- SQLiteHandler db
++ void onCreate(Bundle)
+- void registerUser(String,String,String)
+- void showDialog()
+- void hideDialog()
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.commercialdirector.myitschool.Activity.CustomActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.commercialdirector.myitschool.Activity.LoginActivity
+android.app.Application <|-- com.example.commercialdirector.myitschool.connection.AppController
+androidx.appcompat.app.AppCompatActivity <|-- com.example.commercialdirector.myitschool.Activity.UserActivity
+android.app.ListActivity <|-- com.example.commercialdirector.myitschool.FileManager
+androidx.fragment.app.Fragment <|-- com.example.commercialdirector.myitschool.fragments.FoundFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.commercialdirector.myitschool.HomeActivity
+com.example.commercialdirector.myitschool.Adapters.Adapter <|-- com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter
+com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter +.. com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter$ViewHolder
+com.example.commercialdirector.myitschool.Adapters.OnClickListener <|.. com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter$ViewHolder
+com.example.commercialdirector.myitschool.Adapters.ViewHolder <|-- com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter$ViewHolder
+com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter +.. com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter$MTask
+com.example.commercialdirector.myitschool.Adapters.AsyncTask <|-- com.example.commercialdirector.myitschool.Adapters.RecyclerMusicAdapter$MTask
+com.example.commercialdirector.myitschool.Adapters.Adapter <|-- com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter
+com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter +.. com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter$ViewHolder
+com.example.commercialdirector.myitschool.Adapters.OnClickListener <|.. com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter$ViewHolder
+com.example.commercialdirector.myitschool.Adapters.ViewHolder <|-- com.example.commercialdirector.myitschool.Adapters.RecyclerNewsAdapter$ViewHolder
+androidx.fragment.app.Fragment <|-- com.example.commercialdirector.myitschool.fragments.SubscribersFragment
+com.example.commercialdirector.myitschool.Adapters.Adapter <|-- com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter
+com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter +.. com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter$PersonViewHolder
+com.example.commercialdirector.myitschool.Adapters.OnClickListener <|.. com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter$PersonViewHolder
+com.example.commercialdirector.myitschool.Adapters.ViewHolder <|-- com.example.commercialdirector.myitschool.Adapters.RecyclerUsersAdapter$PersonViewHolder
+androidx.fragment.app.Fragment <|-- com.example.commercialdirector.myitschool.fragments.ProfileFragment
+android.database.sqlite.SQLiteOpenHelper <|-- com.example.commercialdirector.myitschool.Helper.SQLiteHandler
+androidx.fragment.app.Fragment <|-- com.example.commercialdirector.myitschool.fragments.NewsFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.commercialdirector.myitschool.Activity.RegisterActivity
+@enduml
