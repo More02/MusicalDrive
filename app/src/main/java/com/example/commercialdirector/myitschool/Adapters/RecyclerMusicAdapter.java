@@ -44,7 +44,7 @@ public class RecyclerMusicAdapter extends RecyclerView.Adapter<RecyclerMusicAdap
     private final ArrayList<Music> mDataset;
     private final Context mCtx;
     private Media media;
-        private RecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView;
     private RecyclerMusicAdapter mAdapter;
     private boolean isLikeSet;
 
