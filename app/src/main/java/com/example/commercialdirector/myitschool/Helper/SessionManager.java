@@ -10,26 +10,16 @@ import com.example.commercialdirector.myitschool.models.User;
 
 public class SessionManager {
 
-    private static String TAG = SessionManager.class.getSimpleName();
-
+    private static final String TAG = SessionManager.class.getSimpleName();
     private static final String SHARED_PREF_NAME = "MyItSchool";
-
     private static final String KEY_USER_ID = "keyuserid";
     private static final String KEY_USER_NAME = "keyusername";
     private static final String KEY_USER_EMAIL = "keyuseremail";
-
-
     SharedPreferences pref;
-
     Editor editor;
     Context _context;
-
-
     int PRIVATE_MODE = 0;
-
-
     private static final String PREF_NAME = "AndroidHiveLogin";
-
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
 
     public SessionManager(Context context) {
@@ -41,18 +31,15 @@ public class SessionManager {
     public void setLogin(boolean isLoggedIn) {
 
         editor.putBoolean(KEY_IS_LOGGEDIN, isLoggedIn);
-
-
         editor.commit();
-
         Log.d(TAG, "User login session modified!");
     }
 
-    public boolean isLoggedIn(){
+    public boolean isLoggedIn() {
         return pref.getBoolean(KEY_IS_LOGGEDIN, false);
     }
 
-    public boolean userLogin  (User user) {
+    public boolean userLogin(User user) {
 
         editor.putInt(KEY_USER_ID, user.getId());
         editor.putString(KEY_USER_NAME, user.getName());
@@ -62,13 +49,6 @@ public class SessionManager {
     }
 
     public User getUser() {
-        return new User (
-        pref.getInt (KEY_USER_ID, 0),
-        pref.getString (KEY_USER_NAME, null),
-        pref.getString (KEY_USER_EMAIL, null)
-        );
-        }
-
-
-
+        return new User(pref.getInt(KEY_USER_ID, 0), pref.getString(KEY_USER_NAME, null), pref.getString(KEY_USER_EMAIL, null));
     }
+}

@@ -1,12 +1,11 @@
 package com.example.commercialdirector.myitschool.models;
 
-
 import java.util.ArrayList;
 
 public class Users {
     private ArrayList<User> users;
 
-    public Users(){
+    public Users() {
 
     }
 
